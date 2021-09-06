@@ -1,0 +1,7 @@
+  {
+    "ConnectionStrings": {
+      "Development": "Server=MACHINE\\SQLEXPRESS; Database= carscl5_carscraper;Integrated Security = true;",
+      "Production": "Server=MACHINE\\SQLEXPRESS; Database= carscl5_carscraper; Integrated Security = true;"
+
+    }
+} 

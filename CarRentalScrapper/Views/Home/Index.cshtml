@@ -1,0 +1,37 @@
+﻿@using CarRentalScrapper.Models
+@model List<PriceHistory>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Supplier</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Vehicle</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for (var index = 0; index < @Model.Count; index++)
+        {
+            var data = @Model[index];
+            <tr>
+                <td>@index</td>
+                <td>@data.Currency</td>
+                <td>@data.Supplier</td>
+                <td>@data.Logo</td>
+                <td>@data.TotalPrice</td>
+                <td>@data.VehicleType</td>
+                <td>@data.Vehicle</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

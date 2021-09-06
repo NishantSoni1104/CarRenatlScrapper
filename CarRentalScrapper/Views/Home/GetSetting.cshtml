@@ -1,0 +1,70 @@
+﻿@model CarRentalScrapper.ViewModels.Settingsdto
+@{
+    ViewData["Title"] = "Setting";
+}
+
+<h2>Setting</h2>
+<div class="container-fluid">
+
+    <form asp-action="SettingPost">
+
+        <ul class="list-inline">
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Pickup Location</label>
+                    <input asp-for="PickupLocation" type="text" class="form-control" id="PickupLocation" placeholder="Enter location" width="276">
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Pickup Date</label>
+                    <input asp-for="PickupDateInterval" type="number" id="datepicker" width="276" />
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Return Date</label>
+                    <input asp-for="ReturnDateInterval" type="number" class="datepicker" width="276" />
+
+                </div>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </li>
+        </ul>
+
+    </form>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Location</th>
+                    <th scope="col">Pickup Date</th>
+                    <th scope="col">Return Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.GridSetting)
+                {
+                    <tr>
+                        <td>@item.PickupLocation</td>
+                        <td>@item.PickupDate</td>
+                        <td>@item.ReturnDate</td>
+                        <td>
+                            <a class="fa-angle-down" asp-route-id="@item.Id" asp-action="Setting">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+        $.noConflict();
+
+    </script>
+}

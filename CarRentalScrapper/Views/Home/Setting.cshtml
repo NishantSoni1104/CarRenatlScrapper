@@ -1,0 +1,45 @@
+﻿@model CarRentalScrapper.ViewModels.Settingsdto
+@{
+    ViewData["Title"] = "Setting";
+}
+
+<h2>Setting</h2>
+<div class="container-fluid">
+
+    <form asp-action="UpdateSetting">
+        <input type="hidden" asp-for="Id"/>
+        <ul class="list-inline">
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Pickup Location</label>
+                    <input asp-for="PickupLocation" type="text" class="form-control" id="PickupLocation" placeholder="Enter Airport,City,Station,suburb" width="276">
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Pickup Date</label>
+                    <input asp-for="PickupDateInterval" type="number" width="276" />
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="PickupLocation">Return Date</label>
+                    <input asp-for="ReturnDateInterval" type="number" width="276" />
+
+                </div>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </li>
+        </ul>
+
+    </form>
+
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+        $.noConflict();
+
+    </script>
+}
